@@ -1,0 +1,13 @@
+<div class="container mt-5">
+
+  <h1><%= @pet.name %><small>(<%= @pet.species %>)</small></h1>
+
+  <ul>
+    <li>Endereço: <%= @pet.address %></li>
+    <li>Encontrado em: <%= @pet.found_on %></li>
+  </ul>
+
+  <%= link_to "Editar #{@pet.name}", edit_pet_path(@pet), class: 'btn btn-info btn-sm' %>
+  <%= link_to "Deletar", pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" }, class: "btn btn-danger btn-sm" %>
+  <%= link_to "Voltar", pets_path(@pet), class: 'btn btn-success btn-sm' %>
+</div>
